@@ -11,13 +11,17 @@
 <script type="text/javascript">
 var svg = d3.select("svg");
 var circle = svg.selectAll("circle")
-    .data([5, 10, 15, 20]);
+  .data([5, 10, 15, 20]);
 circle.attr("r", function(d) { return d; });
 
 var circleEnter = circle.enter().append("circle");
 circleEnter.attr("cx", 160);
 circleEnter.attr("cy", 60);
 circleEnter.attr("r", function(d) { return d; });
+
+var circle = svg.selectAll("circle")
+  .data([32, 57]);
+circle.exit().remove();
 </script>
 </body>
 </html>
