@@ -1,0 +1,27 @@
+<html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+d3.select("body").selectAll("p")
+    .data([4, 8, 15, 16, 23, 42])
+  .enter().append("h1")
+    .text(function(d) { return "I’m number " + d + "!"; });
+
+// Update…
+var p = d3.select("body").selectAll("div")
+    .data([5, 8, 15, 16, 23, 42])
+    .text(String);
+
+// Enter…
+p.enter().append("p")
+    .text(String);
+
+// Exit…
+p.exit().remove();
+</script>
+<p>hi</p>
+<div>boo</div>
+</body>
+</html>
